@@ -2,6 +2,10 @@
 
 Docker image with compiled OpenCV, Dlib and Node.js
 
+[![](https://images.microbadger.com/badges/version/m03geek/opencv-dlib-node:alpine.svg)](https://microbadger.com/images/m03geek/opencv-dlib-node:alpine "version")[![](https://images.microbadger.com/badges/image/m03geek/opencv-dlib-node:alpine.svg)](https://microbadger.com/images/m03geek/opencv-dlib-node:alpine "layers")
+
+[![](https://images.microbadger.com/badges/version/m03geek/opencv-dlib-node:stretch.svg)](https://microbadger.com/images/m03geek/opencv-dlib-node:stretch "version")[![](https://images.microbadger.com/badges/image/m03geek/opencv-dlib-node:stretch.svg)](https://microbadger.com/images/m03geek/opencv-dlib-node:stretch "layers")
+
 Based on [opencv-dlib image](https://hub.docker.com/r/m03geek/opencv-dlib/)
 
 # Notes
@@ -15,7 +19,7 @@ So you can add following lines to your dockerfile.
 For alpine you will also need `libstdc++` for building native modules.
 
 ```Dockerfile
-RUN apk add --virtual .build-deps python libstdc++
+RUN apk add --virtual .build-deps python libstdc++ gcc g++
 ```
 
 Also you may need `libc6-compat` if your native modules will use glibc.
@@ -31,8 +35,13 @@ RUN apk del .build-deps
 ## Stretch (debian)
 
 ```Dockerfile
-RUN apt-get update && apt-get install -y --no-install-recommends python
+RUN apt-get update && apt-get install -y --no-install-recommends python build-essential
 ```
+
+# Node.js lib compatibility
+
+* [opencv4nodejs](https://www.npmjs.com/package/opencv4nodejs) - native module, see installing instructions above and follow module documentation.
+* [face-recognition](https://www.npmjs.com/package/face-recognition) - native module, see installing instructions above and follow module documentation.
 
 # Other images:
 

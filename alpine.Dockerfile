@@ -4,7 +4,8 @@ ARG RUNTIME_DEPS=''
 ARG BUILD_DEPS='wget make gcc g++ python linux-headers binutils-gold libstdc++'
 ARG NODE_VERSION
 
-ENV NODE_VERSION=${NODE_VERSION}
+ENV NODE_VERSION=${NODE_VERSION} \
+    OPENCV4NODEJS_DISABLE_AUTOBUILD=1
 
 RUN echo "Node.js: ${NODE_VERSION}" \
     && apk add -u --no-cache --virtual .build-dependencies $BUILD_DEPS \

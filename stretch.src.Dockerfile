@@ -4,7 +4,8 @@ ARG RUNTIME_DEPS='ca-certificates'
 ARG BUILD_DEPS='apt-utils wget xz-utils cmake build-essential pkg-config'
 ARG NODE_VERSION
 
-ENV NODE_VERSION=${NODE_VERSION}
+ENV NODE_VERSION=${NODE_VERSION} \
+    OPENCV4NODEJS_DISABLE_AUTOBUILD=1
 
 RUN echo "Node.js: ${NODE_VERSION}" \
     && apt-get update && apt-get install -y ${BUILD_DEPS} ${RUNTIME_DEPS} --no-install-recommends \

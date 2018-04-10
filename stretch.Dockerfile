@@ -6,7 +6,8 @@ ARG ARCH='x64'
 ARG LIB_PREFIX='/usr/local'
 ARG NODE_VERSION
 
-ENV NODE_VERSION=${NODE_VERSION}
+ENV NODE_VERSION=${NODE_VERSION} \
+    OPENCV4NODEJS_DISABLE_AUTOBUILD=1
 
 RUN echo "Node.js: ${NODE_VERSION}" \
     && apt-get update && apt-get install -y ${BUILD_DEPS} ${RUNTIME_DEPS} --no-install-recommends \
