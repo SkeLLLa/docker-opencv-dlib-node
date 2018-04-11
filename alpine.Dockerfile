@@ -1,7 +1,7 @@
 FROM m03geek/opencv-dlib:alpine
 
-ARG RUNTIME_DEPS=''
-ARG BUILD_DEPS='wget make gcc g++ python linux-headers binutils-gold libstdc++'
+ARG RUNTIME_DEPS='openssl zlib'
+ARG BUILD_DEPS='wget make gcc g++ python linux-headers binutils-gold libstdc++ openssl-dev zlib-dev'
 ARG NODE_VERSION
 
 ENV NODE_VERSION=${NODE_VERSION} \
