@@ -1,5 +1,5 @@
-ARG NODE_VERSION
-FROM mhart/alpine-node:${NODE_VERSION} as nodebase
+ARG VERSION
+FROM mhart/alpine-node:${VERSION} as nodebase
 
 FROM m03geek/opencv-dlib:alpine
 ENV OPENCV4NODEJS_DISABLE_AUTOBUILD=1
