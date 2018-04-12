@@ -1,4 +1,4 @@
-# docker-opencv-dlib
+# docker-opencv-dlib-node
 
 Docker image with compiled OpenCV, Dlib and Node.js
 
