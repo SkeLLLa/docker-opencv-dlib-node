@@ -8,6 +8,12 @@ Docker image with compiled OpenCV, Dlib and Node.js
 
 Based on [opencv-dlib image](https://hub.docker.com/r/m03geek/opencv-dlib/)
 
+# Versions (latest)
+
+* node - 10.0.0
+* dlib - 19.8
+* opencv - 3.4.1
+
 # Notes
 
 If you want to use some native modules you'll need to install at least `python`.
